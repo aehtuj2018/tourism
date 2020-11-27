@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="jumbotron jumbotron-fluid">
+    <div id="home">Weather in {{ Name }}</div>
+    <br />
+    <div ng-model="importantText ">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col" colspan="2">Spring</th>
+          <th scope="col" colspan="2">Summer</th>
+          <th scope="col" colspan="2">Autumn</th>
+          <th scope="col" colspan="2">Winter</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="col">Spring Morining</th>
+          <th scope="col">Spring Evening</th>
+          <th scope="col">Summer Morinig</th>
+          <th scope="col">Summer Evening</th>
+          <th scope="col">Autumn Morning</th>
+          <th scope="col">Autumn Evening</th>
+          <th scope="col">Winter Morning</th>
+          <th scope="col">Winter Evening</th>
+        </tr>
+        <tr>
+          <th scope="col">{{ SpringM }}</th>
+          <th scope="col">{{ SpringN }}</th>
+          <th scope="col">{{ SummerM }}</th>
+          <th scope="col">{{ SummerN }}</th>
+
+          <th scope="col">{{ AutumnM }}</th>
+          <th scope="col">{{ AutumnN }}</th>
+          <th scope="col">{{ WinterM }}</th>
+          <th scope="col">{{ WinterN }}</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+    <div>
+      The most suitable time to enjoy your holiday in
+      {{ Name }} would be between {{ visitFrom }} and
+      {{ visitTo }}
+    </div>
+    <br>
+    <div>
+
+      <button type="button" class="btn btn-primary" (click)="onBack()">Back</button>
+
+    </div>
+
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<router-outlet></router-outlet>
+

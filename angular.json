@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "Tourism"
+  "defaultProject": "Tourism",
+  "cli": {
+    "analytics": false
+  }
 }

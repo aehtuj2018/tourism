@@ -1,3 +1,5 @@
+import { cityInfo } from './component/cities/cities-info';
+import { HomeComponent } from './component/home/home.component';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Tourism';
+
+  myname:string = 'Abdi T. Novemebr 2020, Edmonton, AB CANADA';
+  cityInfo: cityInfo[];
+
 }

@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="jumbotron jumbotron-fluid">
+    <div id="aim">Tech Ideas:</div>
+    <br />
+
+
+    <form [formGroup]="techIdeasForm">
+      <div class="form-group">
+        <div class="w-100 p-3">
+          <label for="userName">Name</label>
+      <input class="form-control" type="text" id="userName" formControlName="name" >
+        </div>
+
+        <span  class="error" *ngIf="name.touched && name.errors?.required">
+          Please Insert your Name
+        </span>
+        <span  class="error" *ngIf="techIdeasForm.get('name').touched && techIdeasForm.get('name').errors?.minlength">
+          Your name should contain more than 2 letters
+        </span>
+
+        <span  class="error" *ngIf="techIdeasForm.get('name').touched && techIdeasForm.get('name').errors?.prohibited">
+          Your name should should not contain tourist
+        </span>
+
+
+        <span  class="error" *ngIf="techIdeasForm.get('name').errors?.restrictedWord && techIdeasForm.get('name').touched && !techIdeasForm.get('name').errors?.required && !techIdeasForm.get('name').errors?.minlength ">
+          Your name cannot contain the word tourist
+        </span>
+
+
+        <div class="w-100 p-3">
+          <label for="userAge"  >Age</label>
+      <input class="form-control form-control-sm" type="text" id="userAge" formControlName="age" >
+        </div>
+
+        <div class="w-100 p-3">
+           <label for="userEmail"  >Email address</label>
+        <input type="email" class="form-control" id="userEmail" placeholder="name@example.com" formControlName="email">
+        </div>
+
+        <span  class="error" *ngIf="techIdeasForm.get('email').touched && techIdeasForm.get('email').errors?.required">
+          Please Insert your email
+        </span>
+
+        <div class="w-100 p-3">
+
+          <label for="targetCity">Target City</label>
+        <select class="form-control" id="targetcity" formControlName="city" >
+          <option value="">-- select --</option>
+          <option  *ngFor="let city of cities" value="{{city}}" >{{city}} </option>
+
+        </select>
+        </div>
+
+        <span  class="error" *ngIf="techIdeasForm.get('city').touched && techIdeasForm.get('city').value===''">
+          Please select city
+        </span>
+
+        <div class="w-100 p-3">
+
+          <label for="brief">Brief about your Technical idea:</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" cols="50" id="brief" required minlength="100" formControlName="brief" ></textarea>
+        </div>
+        <span  class="error" *ngIf="techIdeasForm.get('brief').touched && techIdeasForm.get('brief').errors?.prohibited">
+          Your name should should not contain Nothing
+        </span>
+        <div class="w-25 p-3">
+          <button type="submit" class="btn btn-primary my-1" (click)="onClick()"  >Submit</button>
+        </div>
+
+      </div>
+
+    </form>
+
+
+  </div>
+</div>
+
+<router-outlet></router-outlet>
